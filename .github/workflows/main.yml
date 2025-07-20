@@ -54,6 +54,6 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "actions@github.com"
           git add blog/post-headers.yml blog/posts
-          git commit -m "Publish blog post: ${{ steps.extract.outputs.title }}"
+          git commit -m "Publish blog post: ${{ steps.extract.outputs.title }}" || echo "Nothing to commit"
           git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
-          git push
+          git push origin HEAD:main
