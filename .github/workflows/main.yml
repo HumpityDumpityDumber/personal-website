@@ -43,7 +43,9 @@ jobs:
 
       - name: Move and rename publish.md
         run: |
-          mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
+          mkdir -p blog/posts
+            mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
+
 
       - name: Commit changes
         run: |
