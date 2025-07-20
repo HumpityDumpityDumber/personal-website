@@ -47,10 +47,13 @@ jobs:
             mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
 
 
-      - name: Commit changes
+      - name: Commit changes and push
+        env:
+          TOKEN: ${{ secrets.PAT }}
         run: |
           git config user.name "GitHub Action"
           git config user.email "actions@github.com"
           git add blog/post-headers.yml blog/posts
           git commit -m "Publish blog post: ${{ steps.extract.outputs.title }}"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
           git push
