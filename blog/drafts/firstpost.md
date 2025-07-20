@@ -1,5 +1,5 @@
 first post
-intro
+intro, personal
 
 ## Welcome to My Blog!
 I am just messing around with a little blog framework I made. This is my first post! The navigation will be improved in the future.
