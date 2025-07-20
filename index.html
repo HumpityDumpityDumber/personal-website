@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>knee's little corner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog/blog-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="api-calls.js"></script>
+    <script type=module src="blog/render-blog.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <section id="hero-section">
+        <header>
+            <div class="left">
+            <div class="letters">
+                <span class="letter letter-k">k</span>
+                <span class="letter letter-n">n</span>
+                <span class="letter letter-e1">e</span>
+                <span class="letter letter-e2">e</span>
+            </div>
+            <div id="now-playing"></div>
+            </div>
+            <span class="sparkles">*.˙⟡</span>
+            <div class="monkeytype-div">
+                <a href="https://monkeytype.com/profile/raurutuchr" target="_blank" style="text-decoration:none;">
+                    <button id="monkeytype-15wpm" disabled>
+                    </button>
+                </a>
+            </div>
+            <nav>
+                <button class="twitter nav-button"> <a href="https://twitter.com/raurutuchr_spl" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                </a></button>
+                <button class="bsky nav-button"> <a href="https://bsky.app/profile/raurutuchr.bsky.social" target="_blank">
+                    <i class="fa-brands fa-bluesky"></i>
+                </a></button>
+                <button class="github nav-button"> <a href="https://github.com/HumpityDumpityDumber" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a></button>
+            </nav>
+        </header>
+        <div class="header-spacer"></div>
+        <template>
+        <button id="toggle-button"></button>
+        <box id="discord-status"></box>
+        </template>
+        <main>
+        <div class="mm-div">
+            <span class="mm-header">
+                throw me a marshmallow!
+            </span>
+            <a href="https://marshmallow-qa.com/tig5adniz0a23z1?t=7BNsfN&utm_medium=url_text&utm_source=promotion" target="_blank">
+                <button id="marshmallow">
+                    <span>ask knee an anonymous question on</span>
+                    <span class="mm-gap"></span>
+                    <img src="assets/marshmallow.png" alt="marshmallow">
+                    <span class="mm-text">marshmallow</span>
+                </button>
+            </a>
+        </div>
+        <div class="kofi-div">
+            <span class="kofi-header">
+                commission me on kofi!
+            </span>
+            <a href="https://ko-fi.com/raurutuchr" target="_blank">
+                <button id="kofi">
+                    <span>buy a commision from knee on</span>
+                    <span class="kofi-gap"></span>
+                    <img src="assets/kofi.webp" alt="kofi">
+                    <span class="kofi-text">kofi</span>
+                </button>
+            </a>
+        </div>
+        <div class="portfolio-link">
+            <a href="https://portfolio.raurutuchr.ink" target="_blank">go to my portfolio</a>
+        </div>
+        <div class="oc-image">
+            <img src="assets/oc.png" alt="knee's oc">
+        </div>
+        </main>
+    </section>
+    <section id="blog">
+    </section>
+    <footer class="scroll-footer" onclick="document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });">
+        <i class="fa-solid fa-angles-down"></i>
+        <span>scroll down for blog</span>
+        <i class="fa-solid fa-angles-down"></i>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const letters = document.querySelectorAll('.letter');
+            const sparkles = document.querySelector('.sparkles');
+            const wpmbutton = document.querySelector('.monkeytype-div');
+            const navButtons = document.querySelectorAll('.nav-button');
+            
+            if (scrollY > 50) {
+                letters.forEach(letter => {
+                    letter.classList.add('snapped');
+                });
+                sparkles.style.opacity = '0';
+                wpmbutton.style.opacity = '0';
+                navButtons.forEach(btn => btn.classList.add('nav-button-small'));
+            } else {
+                letters.forEach(letter => {
+                    letter.classList.remove('snapped');
+                });
+                sparkles.style.opacity = '1';
+                wpmbutton.style.opacity = '1';
+                navButtons.forEach(btn => btn.classList.remove('nav-button-small'));
+            }
+        });
+    </script>
+</body>
+</html>
