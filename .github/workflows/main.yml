@@ -1,0 +1,54 @@
+name: Publish Blog Post
+
+on:
+  push:
+    paths:
+      - 'blog/drafts/publish.md'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up timestamp
+        id: timestamp
+        run: echo "time=$(date +%s)" >> $GITHUB_OUTPUT
+
+      - name: Extract title and tags
+        id: extract
+        run: |
+          TITLE=$(head -n 1 blog/drafts/publish.md)
+          TAGLINE=$(head -n 2 blog/drafts/publish.md | tail -n 1)
+
+          TAGS_YAML=$(echo "$TAGLINE" | tr ',' '\n' | sed 's/^ *//;s/ *$//' | sed 's/^/     - "/;s/$/"/')
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "tags_yaml<<EOF" >> $GITHUB_OUTPUT
+          echo "$TAGS_YAML" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Prepend YAML header to blog/post-headers.yml
+        run: |
+          {
+            echo "${{ steps.timestamp.outputs.time }}:"
+            echo " - Title: \"${{ steps.extract.outputs.title }}\""
+            echo "   Date: \"${{ steps.timestamp.outputs.time }}\""
+            echo "   Tags:"
+            echo "${{ steps.extract.outputs.tags_yaml }}"
+            echo ""
+            cat blog/post-headers.yml
+          } > temp.yml && mv temp.yml blog/post-headers.yml
+
+      - name: Move and rename publish.md
+        run: |
+          mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add blog/post-headers.yml blog/posts
+          git commit -m "Publish blog post: ${{ steps.extract.outputs.title }}"
+          git push
