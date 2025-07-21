@@ -5,7 +5,7 @@ const urlParams = new URLSearchParams(window.location.search);
 let postParam = urlParams.get('post');
 
 // fetch yaml contents
-const headersResponse = await fetch('/blog/post-headers.yaml');
+const headersResponse = await fetch('/blog/post-headers.yml');
 const headersText = await headersResponse.text();
 
 // parse top level yaml
