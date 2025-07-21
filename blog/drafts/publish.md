@@ -7,4 +7,4 @@ I am just messing around with a little blog framework I made. This is my first p
 ## What do I plan to post here?
 Mostly random ideas I have for project (anyone is welcome to steal them if they are posted here) and maybe stupid opinions I have on random topics.
 
-Hopefully this blog goes well!     
+Hopefully this blog goes well!      
