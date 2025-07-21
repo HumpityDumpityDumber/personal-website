@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
 
       - name: Set up timestamp
         id: timestamp
@@ -21,9 +23,7 @@ jobs:
         run: |
           TITLE=$(head -n 1 blog/drafts/publish.md)
           TAGLINE=$(head -n 2 blog/drafts/publish.md | tail -n 1)
-
           TAGS_YAML=$(echo "$TAGLINE" | tr ',' '\n' | sed 's/^ *//;s/ *$//' | sed 's/^/     - "/;s/$/"/')
-
           echo "title=$TITLE" >> $GITHUB_OUTPUT
           echo "tags_yaml<<EOF" >> $GITHUB_OUTPUT
           echo "$TAGS_YAML" >> $GITHUB_OUTPUT
@@ -44,8 +44,7 @@ jobs:
       - name: Move and rename publish.md
         run: |
           mkdir -p blog/posts
-            mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
-
+          mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
 
       - name: Commit changes and push
         env:
