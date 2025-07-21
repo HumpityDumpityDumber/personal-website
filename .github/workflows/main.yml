@@ -16,9 +16,7 @@ jobs:
 
       - name: Set up timestamp
         id: timestamp
-        run: |
-          echo "time=$(date +%s)" >> $GITHUB_OUTPUT
-          echo "date=$(date +%F)" >> $GITHUB_OUTPUT
+        run: echo "time=$(date +%s)" >> $GITHUB_OUTPUT
 
       - name: Extract title and tags
         id: extract
@@ -36,7 +34,7 @@ jobs:
           {
             echo "${{ steps.timestamp.outputs.time }}:"
             echo " - Title: \"${{ steps.extract.outputs.title }}\""
-            echo "   Date: \"${{ steps.timestamp.outputs.date }}\""
+            echo "   Date: \"${{ steps.timestamp.outputs.time }}\""
             echo "   Tags:"
             echo "${{ steps.extract.outputs.tags_yaml }}"
             echo ""
@@ -47,11 +45,6 @@ jobs:
         run: |
           mkdir -p blog/posts
           mv blog/drafts/publish.md blog/posts/${{ steps.timestamp.outputs.time }}.md
-
-      - name: Strip title and tags from blog post
-        run: |
-          tail -n +3 blog/posts/${{ steps.timestamp.outputs.time }}.md > temp.md
-          mv temp.md blog/posts/${{ steps.timestamp.outputs.time }}.md
 
       - name: Commit changes and push
         env:
