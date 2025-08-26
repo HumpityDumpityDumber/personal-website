@@ -78,10 +78,10 @@
                 </button>
             </a>
         </div>
-        </template>
         <div class="portfolio-link">
             <a href="https://portfolio.raurutuchr.ink" target="_blank">go to my portfolio</a>
         </div>
+        </template>
         <div class="oc-image">
             <img src="assets/oc.png" alt="knee's oc">
         </div>
@@ -99,9 +99,10 @@
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             const letters = document.querySelectorAll('.letter');
-            const sparkles = document.querySelector('.sparkles');
             const wpmbutton = document.querySelector('.monkeytype-div');
+            const sparkles = document.querySelector('.sparkles');
             const navButtons = document.querySelectorAll('.nav-button');
+            const scrollPrompt = document.querySelector('.scroll-footer');
             
             if (scrollY > 50) {
                 letters.forEach(letter => {
@@ -109,12 +110,14 @@
                 });
                 sparkles.style.opacity = '0';
                 wpmbutton.style.opacity = '0';
+                scrollPrompt.style.opacity = '0';
                 navButtons.forEach(btn => btn.classList.add('nav-button-small'));
             } else {
                 letters.forEach(letter => {
                     letter.classList.remove('snapped');
                 });
                 sparkles.style.opacity = '1';
+                scrollPrompt.style.opacity = '1';
                 wpmbutton.style.opacity = '1';
                 navButtons.forEach(btn => btn.classList.remove('nav-button-small'));
             }

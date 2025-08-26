@@ -24,6 +24,7 @@ header {
     top: 0;
     left: 0;
     z-index: 10000;
+    margin-bottom: 0;
 }
 
 .header-spacer {
@@ -130,10 +131,9 @@ header {
     color: rgb(184, 17, 17);
     width: 100px;
     height: 100px;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out, font-size 0.5s ease-in-out;
     justify-content: center;
     margin-left: 15px;
-    transition: width 0.3s cubic-bezier(.77,0,.18,1), height 0.3s cubic-bezier(.77,0,.18,1), font-size 0.3s cubic-bezier(.77,0,.18,1);
 }
 
 .nav-button-small {
@@ -150,8 +150,7 @@ header {
 .nav-button i {
     font-size: 4rem;
     color: white;
-    transition: color 0.3s;
-    transition: font-size 0.3s cubic-bezier(.77,0,.18,1);
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .nav-button-small i {
@@ -164,6 +163,14 @@ header {
 
 main {
     margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-between;
+    flex: 1 1 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #marshmallow {
@@ -175,6 +182,8 @@ main {
     transition: all 0.5s ease-in-out;
     font-size: 1rem;
     transform: rotate(8deg);
+    font-family: 'Google Sans Flex', Arial, sans-serif;
+    font-variation-settings: "ROND" 100;
 }
 
 #marshmallow:hover {
@@ -208,14 +217,15 @@ main {
     font-weight: bold; 
     margin-bottom: 10px; 
     text-align: center;
-    font-variation-settings: "ROND" 70; 
     transform: rotate(5deg);
 }
 
 .mm-div {
-    position: absolute;
-    right: 100px;
+    position: static;
+    right: auto;
     z-index: 1001;
+    font-family: 'Google Sans Flex', Arial, sans-serif;
+    font-variation-settings: "ROND" 70; 
 }
 
 #kofi {
@@ -314,6 +324,7 @@ main {
     justify-content: center;
     gap: 18px;
     letter-spacing: 1px;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .scroll-footer .fa-angles-down {
@@ -367,6 +378,8 @@ main {
     pointer-events: none;
     padding-top: 8px;
     padding-bottom: 8px;
+    font-family: 'Google Sans Flex', Arial, sans-serif;
+    font-variation-settings: "ROND" 70;
 }
 
 #monkeytype-15wpm .mt-small {
@@ -429,12 +442,14 @@ main {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: stretch;
     position: relative;
     overflow: hidden;
     background-color: #282828;
     background-image: url('assets/bg.png');
     background-repeat: repeat;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 @media (min-width: 900px) {
@@ -455,9 +470,12 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 1.5rem;
+    margin-bottom: 3.5rem;
 }
 
 .oc-image img {
     max-width: 80%;
-    height: 500px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
 }
