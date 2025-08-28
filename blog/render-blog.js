@@ -12,22 +12,54 @@ const headersText = await headersResponse.text();
 const data = jsyaml.load(headersText);
 const posts = Object.entries(data).sort((a, b) => b[0] - a[0]); // sort by timestamp descending
 
-let postText = "";
+const blogSection = document.getElementById('blog');
+const prevBtn = document.getElementById('previous-blog');
+const nextBtn = document.getElementById('next-blog');
 
-if (!postParam) {
-  const postResponse = await fetch('/blog/posts/' + posts[0][0] + '.md');
-  postText = await postResponse.text();
-} else {
-  const postResponse = await fetch('/blog/posts/' + postParam + '.md');
-  postText = await postResponse.text();
+// Find current post index
+let currentIndex = 0;
+if (postParam) {
+  currentIndex = posts.findIndex(([key]) => key === postParam);
+  if (currentIndex === -1) currentIndex = 0;
 }
 
-// prepend title, date, and tags as markdown
-const postMetaArr = posts[0][1];
-const postMeta = postMetaArr[0];
-const metaMarkdown = `# ${postMeta.Title}\n\n*${postMeta.Date}\n\n${postMeta.Tags ? postMeta.Tags.map(tag => `\`${tag}\``).join(' ') : ''}\n\n`;
-const fullPostMarkdown = metaMarkdown + postText;
+// Render post function
+function renderPost(index) {
+  const [postKey, postMetaArr] = posts[index];
+  fetch('/blog/posts/' + postKey + '.md')
+    .then(res => res.text())
+    .then(postText => {
+      const postMeta = postMetaArr[0];
+      const metaMarkdown = `# ${postMeta.Title}\n\n*${postMeta.Date}\n\n${postMeta.Tags ? postMeta.Tags.map(tag => `\`${tag}\``).join(' ') : ''}\n\n`;
+      const fullPostMarkdown = metaMarkdown + postText;
+      blogSection.innerHTML = marked(fullPostMarkdown);
 
-const html = marked(fullPostMarkdown);
+      // Update URL parameter
+      history.replaceState(null, '', '?post=' + postKey);
 
-document.getElementById('blog').innerHTML = html;
+      // Enable/disable buttons based on available previous/next post
+      prevBtn.disabled = (index >= posts.length - 1);
+      nextBtn.disabled = (index <= 0);
+      prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+      nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+      prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+      nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+    });
+}
+
+// Initial render
+renderPost(currentIndex);
+
+// Button handlers
+prevBtn.onclick = () => {
+  if (currentIndex < posts.length - 1) {
+    currentIndex++;
+    renderPost(currentIndex);
+  }
+};
+nextBtn.onclick = () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    renderPost(currentIndex);
+  }
+};

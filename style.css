@@ -126,38 +126,47 @@ header {
 
 .nav-button {
     background-color: #1d2021;
-    border: 1px solid #ffffff; 
-    border-radius: 10px;
-    color: rgb(184, 17, 17);
+    border-width: 0;
+    border-radius: 50px;
     width: 100px;
     height: 100px;
-    transition: background-color 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out, font-size 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     justify-content: center;
     margin-left: 15px;
 }
 
-.nav-button-small {
-    width: 48px !important;
-    height: 48px !important;
-    padding: 0 !important;
-}
-
 .nav-button:hover {
-    border-color: #83a598;
+    color: #83a598;
     cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
 }
 
 .nav-button i {
-    font-size: 4rem;
+    font-size: 50px;
     color: white;
     transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
 
-.nav-button-small i {
-    font-size: 2rem !important;
+.nav-button:hover i {
+    color: #83a598;
 }
 
-.nav-button:hover i {
+.nav-button-small {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+}
+
+.nav-button-small:hover {
+    border-radius: 12px;
+}
+
+.nav-button-small i {
+    font-size: 20px;
+}
+
+.nav-button-small:hover i {
     color: #83a598;
 }
 
@@ -175,10 +184,10 @@ main {
 
 #marshmallow {
     border-style: none;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: #ffffff;
     color: #F3969A;
-    padding: 10px;
+    padding: 20px 30px;
     transition: all 0.5s ease-in-out;
     font-size: 1rem;
     transform: rotate(8deg);
@@ -191,6 +200,7 @@ main {
     color: #ffffff;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+    border-radius: 25px;
 }
 
 .mm-text {
@@ -478,4 +488,38 @@ main {
     height: auto;
     max-height: 500px;
     object-fit: contain;
+}
+
+.blog-stuff {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* center items vertically */
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.blog-stuff > button {
+    align-self: center;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    background: #282828;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.blog-stuff > button:hover {
+    background: #83a598;
+    color: #282828;
+}
+
+.blog-stuff > #blog {
+    width: 100%;
+    max-width: 700px;
+    display: block; /* revert to block for normal flow */
+    min-width: 0;
+    margin: 0 12px;
 }
