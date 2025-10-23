@@ -3,6 +3,11 @@
     src: url('./assets/GoogleSansFlex-Regular.ttf') format('truetype');
 }
 
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 body {
     font-family: 'Google Sans Flex', Arial, sans-serif;
     font-variation-settings: "ROND" 70; 
@@ -10,6 +15,10 @@ body {
     padding: 0 0 50px 0;
     line-height: 1.6;
     background-color: #1d2021;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 header {
