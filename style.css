@@ -28,7 +28,7 @@ body {
     font-size: 7rem;
     color: rgb(0, 0, 0);
     margin: 0;
-    margin-left: 4vh;
+    margin-left: 4vw;
     margin-top: 4vh;
     margin-bottom: 10vh;
 }
@@ -39,7 +39,7 @@ body {
     font-size: 3rem;
     color: rgb(0, 0, 0);
     margin-left: auto;
-    margin-right: 4vh;
+    margin-right: 4vw;
     margin-top: 4vh;
 }
 
@@ -107,7 +107,7 @@ input[type="checkbox"] {
     font-size: 7rem;
     color: rgb(0, 0, 0);
     margin-top: 2vh;
-    margin-left: 4vh;
+    margin-left: 4vw;
     display: block;
     text-decoration: none;
     opacity: 0;
@@ -135,7 +135,7 @@ input[type="checkbox"] {
     display: none;
     gap: 2rem;
     margin-top: 2vh;
-    margin-left: 4vh;
+    margin-left: 4vw;
 }
 
 .socials-links a {
@@ -191,10 +191,11 @@ input[type="checkbox"] {
 #about-me {
     font-size: 2rem;
     font-weight: 500;
-    padding: 15vh 2vh 15vh 30vh;
+    padding: 15vh 2vw 15vh 30vw;
     text-align: center;
 }
 
 #content {
     display: flex;
+    align-items: center;
 }
