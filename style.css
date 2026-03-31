@@ -159,6 +159,11 @@ input[type="checkbox"] {
     font-size: 7rem;
 }
 
+.socials-links img {
+    height: 7rem;
+    width: auto;
+}
+
 .socials-close {
     font-weight: 700;
     font-size: 7rem;
@@ -186,6 +191,17 @@ input[type="checkbox"] {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+#credit {
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: left;
 }
 
 #about-me {

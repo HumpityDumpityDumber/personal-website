@@ -1,56 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ΚΠΞΞ »°～°«</title>
+        <meta name="description" content="A simple starter page." />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="assets/uicons-brands.css" />
+        <link
+            rel="preload"
+            href="assets/uicons-brands.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <script src="index.js" defer></script>
+    </head>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ΚΠΞΞ »°～°«</title>
-	<meta name="description" content="A simple starter page.">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="assets/uicons-brands.css">
-	<link rel="preload" href="assets/uicons-brands.woff2" as="font" type="font/woff2" crossorigin>
-	<script src="index.js" defer></script>
-</head>
+    <body>
+        <svg
+            id="bg"
+            width="1879"
+            height="1080"
+            viewBox="0 0 1879 1080"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                id="bg-path-big"
+                d="M1057.34 242.099C322.419 119.699 252.235 293.099 309.008 395.099C368.016 441.266 450.627 550.999 309.008 620.599C131.984 707.599 872.265 855.099 1057.34 813.099C1242.41 771.099 687.195 614.599 1186.08 620.599C1684.96 626.599 1975.98 395.099 1057.34 242.099Z"
+                fill="#720785"
+            />
+            <path
+                id="bg-path-small"
+                d="M1141.14 400.161C1388.97 350.961 1499.21 433.994 1523.35 481.661C1553.39 515.001 1475.07 545.553 1432.15 556.661C1335.15 569.328 1160.45 610.961 1237.69 676.161C1334.25 757.661 1141.14 866.161 697.235 940.661C342.115 1000.26 294.461 947.494 315.025 913.661C337.376 879.828 408.901 809.461 516.188 798.661C650.297 785.161 497.413 667.161 315.025 626.661C132.637 586.161 364.645 450.161 631.521 538.161C898.398 626.161 831.344 461.661 1141.14 400.161Z"
+                fill="#298FF4"
+            />
+        </svg>
+        <header id="header">
+            <h1 id="name">Knee</h1>
+            <h1 id="title">Programmer • Designer</h1>
+        </header>
 
-<body>
-	<svg id="bg" width="1879" height="1080" viewBox="0 0 1879 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path id="bg-path-big"
-			d="M1057.34 242.099C322.419 119.699 252.235 293.099 309.008 395.099C368.016 441.266 450.627 550.999 309.008 620.599C131.984 707.599 872.265 855.099 1057.34 813.099C1242.41 771.099 687.195 614.599 1186.08 620.599C1684.96 626.599 1975.98 395.099 1057.34 242.099Z"
-			fill="#720785" />
-		<path id="bg-path-small"
-			d="M1141.14 400.161C1388.97 350.961 1499.21 433.994 1523.35 481.661C1553.39 515.001 1475.07 545.553 1432.15 556.661C1335.15 569.328 1160.45 610.961 1237.69 676.161C1334.25 757.661 1141.14 866.161 697.235 940.661C342.115 1000.26 294.461 947.494 315.025 913.661C337.376 879.828 408.901 809.461 516.188 798.661C650.297 785.161 497.413 667.161 315.025 626.661C132.637 586.161 364.645 450.161 631.521 538.161C898.398 626.161 831.344 461.661 1141.14 400.161Z"
-			fill="#298FF4" />
-	</svg>
-	<header id="header">
-		<h1 id="name">Knee</h1>
-		<h1 id="title">Programmer • Designer</h1>
-	</header>
+        <div id="content">
+            <div id="menu">
+                <input type="checkbox" id="portfolio" />
+                <label for="portfolio" class="nav-link">PORTFOLIO</label>
+                <input type="checkbox" id="socials" />
+                <label for="socials" class="nav-link">SOCIALS</label>
+                <div class="socials-links" aria-label="Social links">
+                    <a
+                        href="https://bsky.app/profile/raurutuchr.ink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Bluesky"
+                    >
+                        <img
+                            src="assets/social-icons/bluesky.svg"
+                            alt="Bluesky"
+                        />
+                    </a>
+                    <a
+                        href="https://github.com/humpitydumpitydumber"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <img
+                            src="assets/social-icons/github_light.svg"
+                            alt="GitHub"
+                        />
+                    </a>
+                    <label
+                        for="socials"
+                        class="socials-close"
+                        aria-label="Hide social links"
+                        >x</label
+                    >
+                </div>
+            </div>
 
-	<div id="content">
-		<div id="menu">
-			<input type="checkbox" id="portfolio">
-			<label for="portfolio" class="nav-link">PORTFOLIO</label>
-			<input type="checkbox" id="socials">
-			<label for="socials" class="nav-link">SOCIALS</label>
-			<div class="socials-links" aria-label="Social links">
-				<a href="https://github.com/humpitydumpitydumber" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-					<i class="fi-brands-github" aria-hidden="true"></i>
-				</a>
-				<a href="https://twitter.com/raurutuchr_spl" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-					<i class="fi-brands-twitter" aria-hidden="true"></i>
-				</a>
-				<label for="socials" class="socials-close" aria-label="Hide social links">x</label>
-			</div>
-		</div>
+            <p id="about-me">
+                Heyo! I'm Knee, a programmer and designer based in the US.
+            </p>
+        </div>
 
-		<p id=about-me>
-			Heyo! I'm Knee, a programmer and designer based in the US.
-		</p>
-	</div>
-
-	<footer id="footer">
-		<p>Minimalist purposeful design.</p>
-	</footer>
-</body>
-
+        <footer id="footer">
+            <p>Minimalist purposeful design.</p>
+        </footer>
+        <footer id="credit">
+            icons sourced from&nbsp;<a
+                href="https://svgl.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >svgl.app</a
+            >
+        </footer>
+    </body>
 </html>
