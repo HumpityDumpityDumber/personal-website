@@ -12,6 +12,16 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+#warning {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 10px;
+    background-color: #DEDE4C;
+    border-radius: 6px;
+    font-size: 50px;
+}
+
 #bg {
     position: fixed;
     top: 50%;
