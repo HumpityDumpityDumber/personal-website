@@ -122,6 +122,7 @@ body {
   width: 100%;
   padding: 0 40px;
   box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
 .social {
@@ -153,4 +154,46 @@ body {
   line-height: normal;
   margin: 0;
   margin-bottom: 40px;
+}
+
+.marshmallow-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #F3969A;
+    padding: 20px 30px;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Google Sans Flex', Arial, sans-serif;
+    font-variation-settings: "ROND" 100;
+}
+
+.marshmallow-link:hover {
+    background-color: #F3969A;
+    color: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.marshmallow-copy,
+.marshmallow-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.marshmallow-brand {
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.marshmallow-link img {
+    height: 30px;
+    width: auto;
+    display: block;
 }
