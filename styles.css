@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Libre+Barcode+128+Text&display=swap');
 
+html { font-size: 1vw }
+
 body {
   background-color: #E5DEEA;
-  margin: 0;
+  margin: 0;  
 }
 
 #contact {
   color: #000;
   position: fixed;
-  right: 32px;
-  top: 32px;
+  right: 1rem;
+  top: 1rem;
   text-decoration: underline;
   font-family: 'Iosevka Charon Mono';
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1rem;
 }
 
 #contact::after {
@@ -24,13 +26,13 @@ body {
 #care {
   white-space: pre-line;
   position: fixed;
-  bottom: 15px;
-  left: 15px;
+  bottom: 1rem;
+  left: 1rem;
   color: #787878;
   font-family: 'Iosevka Charon Mono';
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.25rem;
   margin: 0px;
   user-select: none;
 }
@@ -47,7 +49,7 @@ body {
 
 #center-top {
   font-family: "Noto Sans JP";
-  font-size: 128px;
+  font-size: 7rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -58,7 +60,7 @@ body {
 #center-bottom {
   color: #A778D6;
   font-family: "Iosevka Charon Mono";
-  font-size: 96px;
+  font-size: 5rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -78,17 +80,18 @@ body {
 .logo {
   transform: rotate(8deg);
   position: fixed;
-  top: 150px;
-  left: 50px;
-  height: 10vmin;
+  top: 8rem;
+  left: 3rem;
+  height: 6rem;
+  aspect-ratio: 407/131;
 }
 
 #tag {
   position: fixed;
-  right: 25vh;
-  bottom: 5vw;
+  right: 5rem;
+  bottom: 5rem;
   transform: rotate(17.5deg);
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.40));
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.40));
   display: grid;
   grid-template-areas: "stack";
   width: fit-content;
@@ -98,6 +101,7 @@ body {
   grid-area: stack;
   display: block;
   width: 100%;
+  aspect-ratio: 5/8;
   height: auto;
 }
 
@@ -108,8 +112,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding: 2rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
   box-sizing: border-box;
   width: 100%;
 }
@@ -120,13 +125,13 @@ body {
   justify-items: center;
   align-items: center;
   width: 100%;
-  padding: 0 40px;
+  padding: 0 1rem;
   box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
 .social {
-  height: 80px;
+  height: 3rem;
   width: auto;
   display: block;
   margin: 0;
@@ -136,7 +141,7 @@ body {
   color: #000;
   text-align: center;
   font-family: "Libre Barcode 128 Text";
-  font-size: 75px;
+  font-size: 4rem;
   font-style: normal;
   text-decoration: none;
   font-weight: 400;
@@ -148,12 +153,12 @@ body {
 #tag-header {
   color: #5D3387;
   font-family: "Iosevka Charon Mono";
-  font-size: 20px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
 .marshmallow-link {
@@ -161,10 +166,10 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.35rem;
-    border-radius: 50px;
+    border-radius: 3rem;
     background-color: #ffffff;
     color: #F3969A;
-    padding: 20px 30px;
+    padding: 1.5rem 2rem;
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     font-family: 'Google Sans Flex', Arial, sans-serif;
@@ -174,7 +179,7 @@ body {
 .marshmallow-link:hover {
     background-color: #F3969A;
     color: #ffffff;
-    border-radius: 25px;
+    border-radius: 1rem;
     cursor: pointer;
 }
 
@@ -193,7 +198,7 @@ body {
 }
 
 .marshmallow-link img {
-    height: 30px;
+    height: 2rem;
     width: auto;
     display: block;
 }
