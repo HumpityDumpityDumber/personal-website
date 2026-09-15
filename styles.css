@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Libre+Barcode+128+Text&display=swap');
 
-html { font-size: 1vw }
+html {
+  font-size: 1vw;
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: #E5DEEA;
@@ -8,13 +11,13 @@ body {
   position: relative;
 }
 
-.hero {
+#hero {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
 
-#contact {
+.contact {
   color: #000;
   position: absolute;
   right: 1rem;
@@ -27,11 +30,11 @@ body {
   z-index: 3;
 }
 
-#contact::after {
+.contact::after {
   content: " >";
 }
 
-#care {
+.care {
   white-space: pre-line;
   position: absolute;
   bottom: 1rem;
@@ -46,7 +49,7 @@ body {
   z-index: 3;
 }
 
-#center {
+.center {
   position: relative;
   z-index: 2;
   height: 100vh;
@@ -58,7 +61,7 @@ body {
   user-select: none;
 }
 
-#center-top {
+.center-top {
   font-family: "Noto Sans JP";
   font-size: 7rem;
   font-style: normal;
@@ -68,7 +71,7 @@ body {
   margin: 0;
 }
 
-#center-bottom {
+.center-bottom {
   color: #A778D6;
   font-family: "Iosevka Charon Mono";
   font-size: 5rem;
@@ -98,7 +101,7 @@ body {
   z-index: 2;
 }
 
-#tag {
+.tag {
   position: absolute;
   right: 5rem;
   bottom: 5rem;
@@ -110,7 +113,7 @@ body {
   z-index: 2;
 }
 
-#tag > svg {
+.tag>svg {
   grid-area: stack;
   display: block;
   width: 100%;
@@ -118,7 +121,7 @@ body {
   height: auto;
 }
 
-#tag-content {
+.tag-content {
   grid-area: stack;
   z-index: 1;
   display: flex;
@@ -132,7 +135,7 @@ body {
   width: 100%;
 }
 
-#icons {
+.icons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -150,7 +153,7 @@ body {
   margin: 0;
 }
 
-#work {
+.work {
   color: #000;
   text-align: center;
   font-family: "Libre Barcode 128 Text";
@@ -163,7 +166,7 @@ body {
   margin-top: auto;
 }
 
-#tag-header {
+.tag-header {
   color: #5D3387;
   font-family: "Iosevka Charon Mono";
   font-size: 1rem;
@@ -175,49 +178,83 @@ body {
 }
 
 .marshmallow-link {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
-    border-radius: 3rem;
-    background-color: #ffffff;
-    color: #F3969A;
-    padding: 1.5rem 2rem;
-    text-decoration: none;
-    transition: all 0.5s ease-in-out;
-    font-family: 'Google Sans Flex', Arial, sans-serif;
-    font-variation-settings: "ROND" 100;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 3rem;
+  background-color: #ffffff;
+  color: #F3969A;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  font-family: 'Google Sans Flex', Arial, sans-serif;
+  font-variation-settings: "ROND" 100;
 }
 
 .marshmallow-link:hover {
-    background-color: #F3969A;
-    color: #ffffff;
-    border-radius: 1rem;
-    cursor: pointer;
+  background-color: #F3969A;
+  color: #ffffff;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 .marshmallow-copy,
 .marshmallow-brand {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .marshmallow-brand {
-    gap: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .marshmallow-link img {
-    height: 2rem;
-    width: auto;
-    display: block;
+  height: 2rem;
+  width: auto;
+  display: block;
 }
 
-.purple-strip {
+#portfolio {
   width: 100%;
-  height: clamp(160px, 24vw, 280px);
+  height: 2000px;
   background: #5D3387;
+}
+
+.portfolio-header {
+  position: sticky;
+  top: 0;
+  background: #E5DEEA;
+  border-radius: 0 0 40px 40px;
+  height: 6rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 50px 0 50px;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.header-logo {
+  position: absolute;
+  width: 9rem;
+  aspect-ratio: 407/131;
+  z-index: 2;
+}
+
+.hint {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  color: #C9BAD3;
+  text-align: center;
+  font-family: "Iosevka Charon Mono";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
