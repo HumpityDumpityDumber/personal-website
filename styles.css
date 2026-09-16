@@ -50,9 +50,12 @@ body {
 }
 
 .center {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  height: 100vh;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  aspect-ratio: 16/9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,10 +88,10 @@ body {
 .full-page-svg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  height: auto;
   z-index: -1;
   display: block;
+  aspect-ratio: 16/9;
 }
 
 .logo {
@@ -98,6 +101,7 @@ body {
   left: 3rem;
   height: 6rem;
   aspect-ratio: 407/131;
+  color: #E5DEEA;
   z-index: 2;
 }
 
@@ -110,15 +114,14 @@ body {
   display: grid;
   grid-template-areas: "stack";
   width: fit-content;
+  aspect-ratio: 5 / 8;
   z-index: 2;
 }
 
 .tag>svg {
   grid-area: stack;
-  display: block;
+  height: 100%;
   width: 100%;
-  aspect-ratio: 5/8;
-  height: auto;
 }
 
 .tag-content {
@@ -175,9 +178,10 @@ body {
   line-height: normal;
   margin: 0;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.marshmallow-link {
+/* .marshmallow-link {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -207,6 +211,11 @@ body {
   line-height: 1;
 }
 
+.marshmallow-copy {
+    font-size: 1rem;
+  font-weight: normal;
+}
+
 .marshmallow-brand {
   gap: 0.5rem;
   font-size: 1.5rem;
@@ -217,10 +226,10 @@ body {
   height: 2rem;
   width: auto;
   display: block;
-}
+} */
 
 #portfolio {
-  width: 100%;
+  width: auto;
   height: 2000px;
   background: #5D3387;
 }
@@ -229,20 +238,20 @@ body {
   position: sticky;
   top: 0;
   background: #E5DEEA;
-  border-radius: 0 0 40px 40px;
-  height: 6rem;
+  border-radius: 0 0 2.5rem 2.5rem;
+  height: 4rem;
   width: auto;
   display: flex;
   align-items: center;
-  padding: 0 50px 0 50px;
-
+  padding: 0 3rem 0 3rem;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .header-logo {
   position: absolute;
-  width: 9rem;
+  width: 7rem;
   aspect-ratio: 407/131;
+  color: #C9BAD3;
   z-index: 2;
 }
 
@@ -253,7 +262,7 @@ body {
   color: #C9BAD3;
   text-align: center;
   font-family: "Iosevka Charon Mono";
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
