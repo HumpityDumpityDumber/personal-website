@@ -4,17 +4,39 @@ html {
 scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
 body {
 background-color: #E5DEEA;
 margin: 0;
 position: relative;
+overflow-x: hidden;
 }
 
 #hero {
 position: relative;
 width: 100%;
-height: 100vh;
+height: 100svh;
+min-height: 36rem;
 overflow: hidden;
+background-color: #E5DEEA;
+}
+
+#hero::before {
+content: "";
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(rgba(93, 51, 135, 0.12) 1px, transparent 1px),
+linear-gradient(90deg, rgba(93, 51, 135, 0.12) 1px, transparent 1px);
+background-size: 2.5rem 2.5rem;
+mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+pointer-events: none;
 }
 
 .hero-design {
@@ -24,16 +46,29 @@ width: 100%;
 height: 100%;
 }
 
+#button-canvas {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+pointer-events: none;
+}
+
 .contact {
-color: #000;
+color: #E5DEEA;
 position: absolute;
 right: 1.5%;
 top: 1.5%;
-text-decoration: underline;
+padding: 0.45rem 0.9rem;
+border: 1px solid #5D3387;
+border-radius: 999px;
+background: #5D3387;
+text-decoration: none;
 font-family: 'Iosevka Charon Mono';
 font-style: normal;
 font-weight: 500;
-font-size: 0.9vw;
+font-size: clamp(0.8rem, 1.25vw, 1.5rem);
 z-index: 3;
 }
 
@@ -50,7 +85,7 @@ color: #787878;
 font-family: 'Iosevka Charon Mono';
 font-style: normal;
 font-weight: 400;
-font-size: 1.1vw;
+font-size: clamp(0.7rem, 1.5vw, 1.8rem);
 margin: 0;
 user-select: none;
 z-index: 3;
@@ -68,26 +103,29 @@ align-items: center;
 margin: 0;
 flex-direction: column;
 user-select: none;
+gap: clamp(1rem, 3vw, 3rem);
 }
 
 .center-top {
 font-family: "Noto Sans JP";
-font-size: 6.1vw;
-font-style: normal;
-font-weight: 500;
+font-size: clamp(3rem, 6.5vw, 7.8rem);
+font-style: bold;
+font-weight: 700;
 line-height: normal;
 color: #E5DEEA;
 margin: 0;
+transform: rotate(3deg);
+
 }
 
 .center-bottom {
-color: #A778D6;
+color: #b684e9;
 font-family: "Iosevka Charon Mono";
-font-size: 4.35vw;
+font-size: clamp(2.25rem, 4.4vw, 5.5rem);
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-transform: rotate(-5.995deg);
+transform: rotate(-5deg);
 margin: 0;
 }
 
@@ -105,7 +143,7 @@ transform: rotate(8deg);
 position: absolute;
 top: 13%;
 left: 3%;
-width: 17.7%;
+width: clamp(10rem, 20vw, 28rem);
 height: auto;
 aspect-ratio: 407/131;
 color: #E5DEEA;
@@ -120,7 +158,7 @@ transform: rotate(17.5deg);
 filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.40));
 display: grid;
 grid-template-areas: "stack";
-width: 18%;
+width: clamp(11rem, 18vw, 30rem);
 height: auto;
 aspect-ratio: 5 / 8;
 z-index: 2;
@@ -158,7 +196,7 @@ margin-bottom: 1rem;
 }
 
 .social {
-height: 2.6vw;
+height: clamp(2rem, 3vw, 4rem);
 width: auto;
 display: block;
 margin: 0;
@@ -168,7 +206,7 @@ margin: 0;
 color: #000;
 text-align: center;
 font-family: "Libre Barcode 128 Text";
-font-size: 3.5vw;
+font-size: clamp(2rem, 3.4vw, 5rem);
 font-style: normal;
 text-decoration: none;
 font-weight: 400;
@@ -180,7 +218,7 @@ margin-top: auto;
 .tag-header {
 color: #5D3387;
 font-family: "Iosevka Charon Mono";
-font-size: 0.9vw;
+font-size: clamp(0.7rem, 1vw, 1.3rem);
 font-style: normal;
 font-weight: 500;
 line-height: normal;
@@ -236,8 +274,8 @@ line-height: normal;
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 2rem;
-  padding: 4rem 3rem;
+  gap: clamp(1rem, 2vw, 2rem);
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 3vw, 3rem);
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -281,4 +319,66 @@ font-weight: 700;
 margin: 0;
 color: #787878;
 font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+  #hero {
+    min-height: 32rem;
+  }
+
+  .contact {
+    right: 1rem;
+    top: 1rem;
+    max-width: calc(100% - 2rem);
+    text-align: right;
+  }
+
+  .care {
+    bottom: 1rem;
+    left: 1rem;
+    max-width: 9rem;
+  }
+
+  .center {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .center-top {
+    font-size: clamp(2.25rem, 10vw, 4rem);
+    text-align: center;
+  }
+
+  .center-bottom {
+    font-size: clamp(1.75rem, 7vw, 3rem);
+  }
+
+  .logo {
+    top: 10%;
+    left: 1rem;
+    width: clamp(9rem, 32vw, 14rem);
+  }
+
+  .tag {
+    right: 0.5rem;
+    bottom: 3%;
+    width: clamp(10rem, 32vw, 14rem);
+  }
+
+  .portfolio-header {
+    height: 3.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .header-logo {
+    width: 5.5rem;
+  }
+
+  .hint {
+    font-size: 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
