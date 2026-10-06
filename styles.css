@@ -291,7 +291,6 @@ flex-direction: column;
 }
 
 .card-thumb {
-width: 100%;
 aspect-ratio: 16 / 10;
 background-color: #C9BAD3;
 color: #5D3387;
@@ -301,6 +300,11 @@ justify-content: center;
 font-family: "Iosevka Charon Mono";
 font-size: 0.95rem;
 font-weight: 500;
+padding: 1rem;
+}
+
+.card-thumb img {
+  height: 100%;
 }
 
 .card-info {
