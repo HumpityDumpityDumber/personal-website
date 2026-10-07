@@ -1,279 +1,279 @@
 @import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Libre+Barcode+128+Text&family=Noto+Sans+JP:wght@100..900&display=swap');
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 *,
 *::before,
 *::after {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-background-color: #E5DEEA;
-margin: 0;
-position: relative;
-overflow-x: hidden;
+  background-color: #E5DEEA;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
 }
 
 #hero {
-position: relative;
-width: 100%;
-height: 100svh;
-min-height: 36rem;
-overflow: hidden;
-background-color: #E5DEEA;
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 36rem;
+  overflow: hidden;
+  background-color: #E5DEEA;
 }
 
 #hero::before {
-content: "";
-position: absolute;
-inset: 0;
-background-image:
-linear-gradient(rgba(93, 51, 135, 0.12) 1px, transparent 1px),
-linear-gradient(90deg, rgba(93, 51, 135, 0.12) 1px, transparent 1px);
-background-size: 2.5rem 2.5rem;
-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
-pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(93, 51, 135, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 51, 135, 0.12) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+  pointer-events: none;
 }
 
 .hero-design {
-position: absolute;
-inset: 0;
-width: 100%;
-height: 100%;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #button-canvas {
-position: absolute;
-inset: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-pointer-events: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .contact {
-color: #E5DEEA;
-position: absolute;
-right: 1.5%;
-top: 1.5%;
-padding: 0.45rem 0.9rem;
-border: 1px solid #5D3387;
-border-radius: 999px;
-background: #5D3387;
-text-decoration: none;
-font-family: 'Iosevka Charon Mono';
-font-style: normal;
-font-weight: 500;
-font-size: clamp(0.8rem, 1.25vw, 1.5rem);
-z-index: 3;
+  color: #E5DEEA;
+  position: absolute;
+  right: 1.5%;
+  top: 1.5%;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #5D3387;
+  border-radius: 999px;
+  background: #5D3387;
+  text-decoration: none;
+  font-family: 'Iosevka Charon Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+  z-index: 3;
 }
 
 .contact::after {
-content: " >";
+  content: " >";
 }
 
 .care {
-white-space: pre-line;
-position: absolute;
-bottom: 1.5%;
-left: 1.25%;
-color: #787878;
-font-family: 'Iosevka Charon Mono';
-font-style: normal;
-font-weight: 400;
-font-size: clamp(0.7rem, 1.5vw, 1.8rem);
-margin: 0;
-user-select: none;
-z-index: 3;
+  white-space: pre-line;
+  position: absolute;
+  bottom: 1.5%;
+  left: 1.25%;
+  color: #787878;
+  font-family: 'Iosevka Charon Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.7rem, 1.5vw, 1.8rem);
+  margin: 0;
+  user-select: none;
+  z-index: 3;
 }
 
 .center {
-position: absolute;
-z-index: 2;
-inset: 0;
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0;
-flex-direction: column;
-user-select: none;
-gap: clamp(1rem, 3vw, 3rem);
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  flex-direction: column;
+  user-select: none;
+  gap: clamp(1rem, 3vw, 3rem);
 }
 
 .center-top {
-font-family: "Noto Sans JP";
-font-size: clamp(3rem, 6.5vw, 7.8rem);
-font-style: bold;
-font-weight: 700;
-line-height: normal;
-color: #E5DEEA;
-margin: 0;
-transform: rotate(3deg);
+  font-family: "Noto Sans JP";
+  font-size: clamp(3rem, 6.5vw, 7.8rem);
+  font-style: bold;
+  font-weight: 700;
+  line-height: normal;
+  color: #E5DEEA;
+  margin: 0;
+  transform: rotate(3deg);
 
 }
 
 .center-bottom {
-color: #b684e9;
-font-family: "Iosevka Charon Mono";
-font-size: clamp(2.25rem, 4.4vw, 5.5rem);
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-transform: rotate(-4.5deg);
-margin: 0;
+  color: #b684e9;
+  font-family: "Iosevka Charon Mono";
+  font-size: clamp(2.25rem, 4.4vw, 5.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transform: rotate(-4.5deg);
+  margin: 0;
 }
 
 .full-page-svg {
-position: absolute;
-inset: 0;
-width: 100%;
-height: 105%;
-z-index: 0;
-display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 105%;
+  z-index: 0;
+  display: block;
 }
 
 .logo {
-transform: rotate(8deg);
-position: absolute;
-top: 13%;
-left: 3%;
-width: clamp(10rem, 20vw, 28rem);
-height: auto;
-aspect-ratio: 407/131;
-color: #E5DEEA;
-z-index: 2;
+  transform: rotate(8deg);
+  position: absolute;
+  top: 13%;
+  left: 3%;
+  width: clamp(10rem, 20vw, 28rem);
+  height: auto;
+  aspect-ratio: 407/131;
+  color: #E5DEEA;
+  z-index: 2;
 }
 
 .tag {
-position: absolute;
-right: 4%;
-bottom: 7%;
-transform: rotate(17.5deg);
-filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.40));
-display: grid;
-grid-template-areas: "stack";
-width: clamp(11rem, 18vw, 30rem);
-height: auto;
-aspect-ratio: 5 / 8;
-z-index: 2;
+  position: absolute;
+  right: 4%;
+  bottom: 7%;
+  transform: rotate(17.5deg);
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.40));
+  display: grid;
+  grid-template-areas: "stack";
+  width: clamp(11rem, 18vw, 30rem);
+  height: auto;
+  aspect-ratio: 5 / 8;
+  z-index: 2;
 }
 
 .tag>svg {
-grid-area: stack;
-height: 100%;
-width: 100%;
+  grid-area: stack;
+  height: 100%;
+  width: 100%;
 }
 
 .tag-content {
-grid-area: stack;
-z-index: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-padding: 5% ;
-padding-top: 35%;
-padding-bottom: 7%;
-box-sizing: border-box;
-width: 100%;
+  grid-area: stack;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+  padding-top: 35%;
+  padding-bottom: 7%;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .icons {
-display: grid;
-grid-template-columns: 1fr 1fr;
-justify-items: center;
-align-items: center;
-width: 100%;
-padding: 0 1rem;
-box-sizing: border-box;
-margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
 .social {
-height: clamp(2rem, 3vw, 4rem);
-width: auto;
-display: block;
-margin: 0;
+  height: clamp(2rem, 3vw, 4rem);
+  width: auto;
+  display: block;
+  margin: 0;
 }
 
 .work {
-color: #000;
-text-align: center;
-font-family: "Libre Barcode 128 Text";
-font-size: clamp(2rem, 3.4vw, 5rem);
-font-style: normal;
-text-decoration: none;
-font-weight: 400;
-line-height: normal;
-white-space: nowrap;
-margin-top: auto;
+  color: #000;
+  text-align: center;
+  font-family: "Libre Barcode 128 Text";
+  font-size: clamp(2rem, 3.4vw, 5rem);
+  font-style: normal;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+  margin-top: auto;
 }
 
 .tag-header {
-color: #5D3387;
-font-family: "Iosevka Charon Mono";
-font-size: clamp(0.7rem, 1vw, 1.3rem);
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-margin: 0;
-margin-bottom: 2rem;
-text-align: center;
+  color: #5D3387;
+  font-family: "Iosevka Charon Mono";
+  font-size: clamp(0.7rem, 1vw, 1.3rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 #portfolio {
-width: 100%;
-min-height: 100vh;
-height: fit-content;
-background: #5D3387;
-padding-bottom: 5rem;
-box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background: #5D3387;
+  padding-bottom: 5rem;
+  box-sizing: border-box;
 }
 
 .portfolio-header {
-position: sticky;
-top: 0;
-background: #E5DEEA;
-border-radius: 0 0 2.5rem 2.5rem;
-height: 4rem;
-width: auto;
-display: flex;
-align-items: center;
-padding: 0 3rem 0 3rem;
-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-z-index: 10;
+  position: sticky;
+  top: 0;
+  background: #E5DEEA;
+  border-radius: 0 0 2.5rem 2.5rem;
+  height: 4rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem 0 3rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 10;
 }
 
 .header-logo {
-position: absolute;
-width: 7rem;
-aspect-ratio: 407/131;
-color: #C9BAD3;
-z-index: 2;
+  position: absolute;
+  width: 7rem;
+  aspect-ratio: 407/131;
+  color: #C9BAD3;
+  z-index: 2;
 }
 
 .hint {
-position: absolute;
-left: 50%;
-transform: translate(-50%);
-color: #C9BAD3;
-text-align: center;
-font-family: "Iosevka Charon Mono";
-font-size: 1.25rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  color: #C9BAD3;
+  text-align: center;
+  font-family: "Iosevka Charon Mono";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(1rem, 2vw, 2rem);
   padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 3vw, 3rem);
   margin: 0 auto;
@@ -281,16 +281,16 @@ line-height: normal;
 }
 
 .portfolio-card {
-  background: #E5DEEA;
-  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
 }
 
 .card-thumb {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  position: relative;
   aspect-ratio: 16 / 10;
   background-color: #C9BAD3;
   color: #5D3387;
@@ -302,34 +302,65 @@ line-height: normal;
   font-weight: 500;
   padding: 1rem;
   flex-grow: 1;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
+}
+
+.card-thumb::after {
+  content: "view more >";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(40, 40, 40, 0.85) 0%, rgba(40, 40, 40, 0) 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.25rem;
+  color: #E5DEEA;
+  font-family: "Iosevka Charon Mono";
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  opacity: 0;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.card-thumb:hover::after {
+  opacity: 1;
+}
+
+.card-thumb img {
+  transition: transform 0.3s ease;
+}
+
+.card-thumb:hover img {
+  transform: scale(1.03);
 }
 
 .card-thumb img {
   width: 100%;
   height: 100%;
-  object-fit:contain;
+  object-fit: contain;
 }
 
-
 .card-info {
-height: fit-content;
-padding: 1.25rem 1.5rem;
-font-family: "Iosevka Charon Mono";
+  height: fit-content;
+  padding: 1.25rem 1.5rem;
+  font-family: "Iosevka Charon Mono";
 }
 
 .card-info h3 {
-margin: 0 0 0.5rem 0;
-color: #5D3387;
-font-size: 1.2rem;
-font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #C9BAD3;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .card-info p {
-margin: 0;
-color: #787878;
-font-size: 0.85rem;
+  margin: 0;
+  color: #9d83af;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 700px) {
