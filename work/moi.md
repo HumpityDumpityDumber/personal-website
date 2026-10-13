@@ -1,5 +1,5 @@
 --- 
-layout: Cayman 
+layout: default 
 title: MOI UI Mockup 
 ---
 
